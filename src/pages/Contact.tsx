@@ -18,7 +18,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // For now, just show a success message
+   
     toast({
       title: "Message Sent!",
       description: "We'll get back to you within 24 hours.",

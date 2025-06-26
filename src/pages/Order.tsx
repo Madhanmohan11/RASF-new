@@ -99,8 +99,8 @@ const Order = () => {
       });
 
       toast({
-        title: "Order Placed Successfully!",
-        description: "We'll contact you on WhatsApp for confirmation.",
+        title: "Opening WhatsApp!",
+        description: "Please confirm and send the pre-filled message in WhatsApp.",
       });
 
       // Navigate to confirmation page

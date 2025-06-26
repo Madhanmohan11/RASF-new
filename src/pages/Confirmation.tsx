@@ -59,11 +59,11 @@ Please confirm my order. Thank you!`;
           <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle className="h-12 w-12 text-white" />
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Order Placed Successfully!
+          <h1 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
+          Almost There! Confirm Your Order
           </h1>
           <p className="text-lg text-gray-600">
-            Thank you for choosing Rise & Shine Fruits. Your order has been received.
+         Thanks for choosing Rise & Shine Fruits! To confirm your order, simply click the <b>"Confirm Your Order via WhatsApp"</b>  button. Your order isn't final until you do!
           </p>
         </div>
 
