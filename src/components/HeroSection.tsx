@@ -1,93 +1,162 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Truck, Heart, ArrowDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { ArrowRight, Star } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
-const HeroSection = () => {
+export const Hero = () => {
+  const fruitBoxes = [
+    {
+      size: "250g",
+      price: "₹1,008",
+      image: "https://image.made-in-china.com/202f0j00zBOhwVPKQyci/Wholesale-Disposable-Food-Grade-Fresh-Fruit-Plastic-Packaging-Cut-Box-for-Supermarket.webp",
+      description: "Perfect for individuals",
+      features: ["Apples", "Bananas", "Oranges", "Grapes"],
+      color: "green",
+    },
+    {
+      size: "500g",
+      price: "₹1,848",
+      image: "https://image.made-in-china.com/2f0j00zvFVJeIHyNkl/Wholesale-Disposable-Food-Grade-Fresh-Fruit-Plastic-Packaging-Cut-Box-for-Supermarket.webp",
+      description: "Ideal for couples",
+      features: ["Mixed Berries", "Kiwi", "Mango", "Pineapple"],
+      color: "orange",
+    },
+    {
+      size: "750g",
+      price: "₹2,688",
+      image: "https://res.cloudinary.com/dxozetwzm/image/upload/v1751010747/750g_rheolh.png",
+      description: "Great for families",
+      features: ["Seasonal Fruits", "Exotic Mix", "Tropical Blend", "Premium Selection"],
+      color: "purple",
+    },
+  ];
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-100 via-yellow-50 to-green-100 overflow-hidden pt-5 pb-16">  
-      {/* Animated background elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-orange-200 rounded-full opacity-60 animate-bounce"></div>
-      <div className="absolute bottom-32 right-16 w-16 h-16 bg-green-200 rounded-full opacity-60 animate-bounce delay-1000"></div>
-      <div className="absolute top-1/3 right-1/4 w-12 h-12 bg-yellow-200 rounded-full opacity-60 animate-bounce delay-500"></div>
-      <div className="absolute top-1/4 left-1/3 w-8 h-8 bg-pink-200 rounded-full opacity-40 animate-pulse delay-700"></div>
-      <div className="absolute bottom-1/4 left-1/4 w-14 h-14 bg-purple-200 rounded-full opacity-50 animate-pulse delay-300"></div>
+    <section className="pt-24 pb-16 px-4 relative overflow-hidden bg-gray-600 text-white">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-center gap-12">
+          {/* Left Content */}
+          <div className="flex-1 text-center lg:text-left">
+            <div className="flex items-center justify-center lg:justify-start gap-2 mb-6">
+              <div className="flex">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <span className="text-gray-300 text-sm">Trusted by 2000+ customers</span>
+            </div>
 
-      {/* Floating fruit emojis */}
-      <div className="absolute top-32 right-32 text-4xl animate-bounce delay-200">🍓</div>
-      <div className="absolute bottom-40 left-20 text-3xl animate-bounce delay-700">🥭</div>
-      <div className="absolute top-40 left-1/2 text-3xl animate-bounce delay-1000">🍊</div>
-      <div className="absolute bottom-1/3 right-1/3 text-2xl animate-bounce delay-500">🍌</div>
+            {/* Brand Name Styled Like Logo */}
+            <div className="text-center">
+  <h1 className="text-5xl lg:text-6xl font-bold mb-3 leading-tight">
+    <span className="text-[#0A2148] drop-shadow-[0_1px_1px_white]">Rise</span>
+    <span className="text-[#FFA726]"> & </span>
+    <span className="text-[#0A2148] drop-shadow-[0_1px_1px_white]">Shine</span>
+  </h1>
 
-      {/* Main content container - Removed px-6 to eliminate horizontal padding */}
-      <div className="container mx-auto text-center relative z-10 animate-fade-in">
-        <h1 className="text-3xl md:text-8xl font-bold mb-5 bg-gradient-to-r from-orange-600 via-yellow-500 to-green-600 bg-clip-text text-transparent leading-tight animate-scale-in">
-          Rise & Shine Fruits
-        </h1>
+  <h2 className="text-2xl lg:text-3xl font-bold text-[#FFA726] mb-1 tracking-wide uppercase">
+    Fruits
+  </h2>
 
-        <p className="text-2xl md:text-3xl text-gray-700 mb-4 font-medium animate-fade-in delay-200">
-          Fueling Your Healthy Day
-        </p>
+  <p className="text-lg text-[#0A2148] mb-9 max-w-2xl mx-auto tracking-wide">
+    Fueling Your Healthy Day
+  </p>
+</div>
 
-        <h2 className="text-1xl md:text-4xl font-bold text-gray-800 mb-8 max-w-4xl mx-auto leading-relaxed animate-fade-in delay-300">
-          Skip the Prep, Savor the Freshness. Your Perfect Morning Starts Here.
-        </h2>
 
-        <p className="text-1xl text-gray-600 mb-9 max-w-2xl mx-auto animate-fade-in delay-400">
-          Tired of rushing your breakfast? Get wholesome fruit mixes delivered daily.
-          Fuel your day with fresh, perfectly prepared fruit – one delicious mix at a time.
-        </p>
+            {/* Description */}
+            <h3 className="text-2xl lg:text-3xl font-bold text-gray-200 mb-6 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              Skip the Prep, Savor the Freshness. Your Perfect Morning Starts Here.
+            </h3>
+            <p className="text-lg text-gray-400 mb-9 max-w-2xl mx-auto lg:mx-0">
+              Tired of rushing your breakfast? Get wholesome fruit mixes delivered daily.
+              Fuel your day with fresh, perfectly prepared fruit – one delicious mix at a time.
+            </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in delay-500">
-          <Link to="/order">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg transform hover:scale-110 transition-all duration-300 hover:shadow-2xl animate-pulse hover:animate-none"
-            >
-              <Heart className="h-5 w-5 mr-2 animate-bounce" />
-              Order Your Fresh Mix Now!
-            </Button>
-          </Link>
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              {/* <Link
+                to="/order"
+                className="bg-green-600 text-white px-8 py-4 rounded-xl hover:bg-green-700 transition-all transform hover:scale-105 flex items-center justify-center gap-2 text-lg font-semibold shadow-lg hover:shadow-xl"
+              >
+                Order Your Fresh Mix Now!
+                <ArrowRight className="h-5 w-5 " />
+              </Link> */}
 
-          <Link to="/subscribe">
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-2 border-green-500 text-green-700 hover:bg-green-50 px-8 py-4 text-lg font-semibold rounded-full shadow-lg transform hover:scale-110 transition-all duration-300 hover:shadow-2xl"
-            >
-              <Truck className="h-5 w-5 mr-2" />
-              Subscribe & Save Daily!
-            </Button>
-          </Link>
-        </div>
-
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10 text-center animate-fade-in delay-700">
-          <div className="p-6 transform hover:scale-105 transition-all duration-300">
-            <div className="text-4xl font-bold text-orange-500 mb-2 animate-bounce">100%</div>
-            <div className="text-gray-700 font-medium">Fresh & Natural</div>
+              <Link
+                to="/subscribe"
+                className="border-2 border-green-500 text-green-400 px-8 py-4 rounded-xl hover:bg-green-900/30 transition-all flex items-center justify-center gap-2 text-lg font-semibold"
+              >
+                Subscribe & Save Daily!
+              </Link>
+            </div>
           </div>
-          <div className="p-6 transform hover:scale-105 transition-all duration-300">
-            <div className="text-4xl font-bold text-green-500 mb-2 animate-bounce delay-100">Daily</div>
-            <div className="text-gray-700 font-medium">Morning Delivery</div>
-          </div>
-          <div className="p-6 transform hover:scale-105 transition-all duration-300">
-            <div className="text-4xl font-bold text-yellow-500 mb-2 animate-bounce delay-200">500+</div>
-            <div className="text-gray-700 font-medium">Happy Customers</div>
-          </div>
-        </div>
-      </div> {/* Closing tag for main content container */}
 
-      {/* Scroll indicator - Moved outside the 'container' div but still inside 'section' */}
-      <div className="absolute inset-x-0 bottom-0 flex justify-center z-10 text-black animate-bounce">
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-xs opacity-75">Scroll to explore</span>
-          <div className="w-6 h-10 border-2 border-black/60 rounded-full flex justify-center relative">
-            <div className="w-1 h-3 bg-black/80 rounded-full mt-2 animate-pulse"></div>
+          {/* Right Images with Carousel */}
+          <div className="flex-1 relative">
+            <Carousel className="w-full max-w-lg mx-auto">
+              <CarouselContent>
+                {fruitBoxes.map((box, index) => (
+                  <CarouselItem key={index}>
+                    <div className="relative group">
+                      <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-500">
+                        <img
+                          src={box.image}
+                          alt={`${box.size} fruit mix`}
+                          className="w-full h-full object-cover"
+                        />
+                        <div
+                          className={`absolute inset-0 bg-gradient-to-t from-${box.color}-900/40 to-transparent`}
+                        ></div>
+
+                        {/* Overlay Content */}
+                        <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+                          <div className="bg-black/30 backdrop-blur-sm rounded-xl p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 className="text-2xl font-bold mb-2">{box.size} Box</h3>
+                            <p className="text-lg opacity-90 mb-2">{box.description}</p>
+                            <div className="flex flex-wrap gap-2 mb-3">
+                              {box.features.map((feature, idx) => (
+                                <span key={idx} className="bg-white/20 px-2 py-1 rounded-full text-xs">
+                                  {feature}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Price Badge */}
+                      <div
+                        className={`absolute -top-4 -right-4 bg-white p-4 rounded-xl shadow-lg border border-${box.color}-100 transform -rotate-12 group-hover:rotate-0 transition-transform duration-300`}
+                      >
+                        <div className="text-center">
+                          <div className={`text-xl font-bold text-${box.color}-600`}>{box.size}</div>
+                          <div className="text-sm text-gray-600">{box.price}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-4 text-black" />
+              <CarouselNext className="right-4 text-black" />
+            </Carousel>
+
+            {/* Floating Badge */}
+            <div className="absolute top-4 left-4 bg-white p-4 rounded-xl shadow-lg border border-green-100 animate-pulse">
+              <div className="text-center">
+                <div className="text-xl font-bold text-green-600">Fresh</div>
+                <div className="text-sm text-gray-600">Daily Prepared</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
 };
-
-export default HeroSection;

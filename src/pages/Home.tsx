@@ -1,7 +1,7 @@
 
 import { useNavigate } from 'react-router-dom';
-import HeroSection from '@/components/HeroSection';
-import PricingSection from '@/components/PricingSection';
+import { Hero } from '@/components/HeroSection';
+// import PricingSection from '@/components/PricingSection';
 import BenefitsSection from '@/components/BenefitsSection';
 import CTASection from '@/components/CTASection';
 import ThreeSimpleStep from '../components/ThreeSimpleStep';
@@ -15,9 +15,9 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      <HeroSection />
+      <Hero />
       <ThreeSimpleStep />
-      <PricingSection onOrder={handleOrder} />
+      {/* <PricingSection onOrder={handleOrder} /> */}
       <BenefitsSection />
       <CTASection />
     </div>
