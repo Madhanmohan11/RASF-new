@@ -153,13 +153,13 @@ const AdminLogin = () => {
               </Button>
             </form>
 
-            <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+            {/* <div className="mt-6 p-4 bg-blue-50 rounded-lg">
               <p className="text-sm text-blue-800">
                 <strong>Demo Credentials:</strong><br />
                 Username: admin<br />
                 Password: admin123
               </p>
-            </div>
+            </div> */}
           </CardContent>
         </Card>
       </div>
